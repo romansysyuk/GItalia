@@ -1,8 +1,10 @@
 package rzeszow.gitaliano.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+
+
 import rzeszow.gitaliano.entity.Country;
 
 /**
@@ -10,5 +12,5 @@ import rzeszow.gitaliano.entity.Country;
  */
 public interface CountryRepository extends JpaRepository<Country, Long>{
     @Query("select c from Country c where c =:name")
-    Country findByName(@Param("name")String name);
+    Country findByName(@Param("name") String name);
 }

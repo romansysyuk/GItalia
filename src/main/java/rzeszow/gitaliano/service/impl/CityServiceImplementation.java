@@ -1,6 +1,7 @@
 package rzeszow.gitaliano.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import rzeszow.gitaliano.dao.CityRepository;
 import rzeszow.gitaliano.entity.City;
 import rzeszow.gitaliano.service.CityService;
@@ -10,7 +11,8 @@ import java.util.List;
 /**
  * Created by roma-pc on 24.10.16.
  */
-public class CityServiceImplementation implements CityService {
+@Service
+public class CityServiceImplementation implements CityService{
 
     @Autowired
     CityRepository cityRepository;

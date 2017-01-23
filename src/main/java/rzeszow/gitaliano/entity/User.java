@@ -1,5 +1,6 @@
 package rzeszow.gitaliano.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import rzeszow.gitaliano.enums.SexEnum;
 
 import javax.persistence.*;
@@ -10,11 +11,13 @@ import java.util.List;
  * Created by kobeb on 10.10.2016.
  */
 @Entity
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private long id;
+
     @Column(length = 32)
     private String firstName;
     @Column(length = 32)
@@ -42,6 +45,18 @@ public class User {
         this.sexEnum = sexEnum;
     }
 
+    public User(SexEnum sexEnum, String lastName, String firstName, String phoneNumber) {
+        this.sexEnum = sexEnum;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public User(String firstName, String lastName){
+        this.firstName=firstName;
+        this.lastName=lastName;
+    }
+
     public User() {
     }
 
@@ -51,6 +66,14 @@ public class User {
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 
     public String getEmail() {
@@ -73,9 +96,6 @@ public class User {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getLastName() {
         return lastName;
@@ -83,6 +103,14 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public List<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Orders> orders) {
+        this.orders = orders;
     }
 
     public String getPhoneNumber() {
@@ -101,19 +129,15 @@ public class User {
         this.sexEnum = sexEnum;
     }
 
-    public City getCity() {
-        return city;
-    }
 
-    public void setCity(City city) {
-        this.city = city;
-    }
 
-    public List<Orders> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Orders> orders) {
-        this.orders = orders;
+    @Override
+    public String toString() {
+        return "User{" +
+                "sexEnum=" + sexEnum +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                '}';
     }
 }

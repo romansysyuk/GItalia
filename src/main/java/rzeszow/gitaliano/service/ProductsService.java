@@ -11,7 +11,7 @@ public interface ProductsService {
     Products add(Products products);
     void delete(long id);
     Products update(Products products);
-    List<Products> findByName(String name);
+    Products findByName(String name);
     List<Products> getAll();
 
 

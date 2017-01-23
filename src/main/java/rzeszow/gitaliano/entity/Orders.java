@@ -14,6 +14,7 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private long id;
+    @Temporal(TemporalType.DATE)
     @Column
     private Date date;
     @Column

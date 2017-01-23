@@ -1,7 +1,6 @@
 package rzeszow.gitaliano.entity;
 
-import org.hibernate.annotations.NaturalIdCache;
-import org.hibernate.loader.plan.exec.query.internal.SelectStatementBuilder;
+
 
 import javax.persistence.Entity;
 import javax.persistence.*;

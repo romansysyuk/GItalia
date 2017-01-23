@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <!--підтягнення всіх неоголошених компонентів
+    -Підключення компонентів з аннотаціями @Component @Controller-->
+    <context:component-scan base-package="rzeszow.gitaliano.dao"/>
+    <context:component-scan base-package="rzeszow.gitaliano.entity"/>
+    <context:component-scan base-package="rzeszow.gitaliano.enums"/>
+    <context:component-scan base-package="rzeszow.gitaliano.service.impl"/>
+    <context:component-scan base-package="rzeszow.gitaliano.service"/>
+
+
+
+    <!--оголошення менеджера транзакцій-->
+
+    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+
+    <!--шлях до репозиторіїв jpa-->
+
+    <jpa:repositories base-package="rzeszow.gitaliano.dao"/>
+
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"></bean>
+        </property>
+        <property name="persistenceXmlLocation"  value="classpath:/META-INF/persistence.xml"/>
+        <property name="persistenceUnitName" value="gitaliano"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+
+
+
+
+
+</beans>

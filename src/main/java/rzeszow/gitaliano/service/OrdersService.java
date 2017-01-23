@@ -1,9 +1,9 @@
 package rzeszow.gitaliano.service;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
+
 import rzeszow.gitaliano.entity.Orders;
 
-import javax.persistence.criteria.Order;
+
 import java.util.Date;
 import java.util.List;
 

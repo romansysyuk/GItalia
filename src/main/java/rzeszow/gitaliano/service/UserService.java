@@ -13,7 +13,7 @@ public interface UserService {
     void delete(long id);
     User findById(long id);
     User updateUser(User user);
-    List<User> findByName(String Name);
+    List<User> findByName(String name);
     List<User> findByCity(City city);
     List<User> getAll();
 

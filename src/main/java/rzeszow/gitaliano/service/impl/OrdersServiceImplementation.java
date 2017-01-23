@@ -5,6 +5,8 @@ import rzeszow.gitaliano.dao.OrdersRepository;
 import rzeszow.gitaliano.entity.Orders;
 import rzeszow.gitaliano.service.OrdersService;
 
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 import java.util.List;
 
@@ -31,7 +33,8 @@ public class OrdersServiceImplementation implements OrdersService {
         return ordersRepository.findAll();
     }
 
-    public List<Orders> findByDate(Date date) {
-        return null;
+    @Temporal(TemporalType.DATE)
+    public List<Orders>findByDate(Date date) {
+        return ordersRepository.findByDate(date);
     }
 }
