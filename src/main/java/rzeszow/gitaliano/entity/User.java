@@ -11,7 +11,6 @@ import java.util.List;
  * Created by kobeb on 10.10.2016.
  */
 @Entity
-
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

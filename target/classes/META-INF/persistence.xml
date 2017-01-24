@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
-    <persistence-unit name="gitaliano">
+    <persistence-unit name="gitaliano" transaction-type="RESOURCE_LOCAL">
         <class>rzeszow.gitaliano.entity.City</class>
         <class>rzeszow.gitaliano.entity.Country</class>
         <class>rzeszow.gitaliano.entity.Orders</class>

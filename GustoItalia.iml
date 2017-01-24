@@ -22,9 +22,6 @@
         <fileset id="fileset2" name="Spring MVC" removed="false">
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/servlet-context.xml</file>
         </fileset>
-        <fileset id="fileset3" name="Spring Application Context (2)" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/META-INF/beans.xml</file>
-        </fileset>
       </configuration>
     </facet>
     <facet type="web" name="Web">

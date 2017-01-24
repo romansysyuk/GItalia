@@ -21,7 +21,7 @@ import rzeszow.gitaliano.service.impl.UserServiceImplementation;
 public class UserController {
 
     @Autowired
-    private UserServiceImplementation userServiceImplementation;
+    private UserService userService;
 
     @RequestMapping(value = "/newUser", method = RequestMethod.GET)
     public String newUser(Model model){
@@ -31,7 +31,7 @@ public class UserController {
 
     @RequestMapping(value = "/createNewUser", method = RequestMethod.POST)
     public String createNewUser(@ModelAttribute User user){
-        userServiceImplementation.addUser(user);
+        userService.addUser(user);
         return "redirect:/home";
     }
 

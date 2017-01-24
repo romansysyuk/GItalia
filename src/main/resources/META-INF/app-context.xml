@@ -4,21 +4,30 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/data/jpa
+        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!--підтягнення всіх неоголошених компонентів
     -Підключення компонентів з аннотаціями @Component @Controller-->
-    <context:component-scan base-package="rzeszow.gitaliano.dao"/>
-    <context:component-scan base-package="rzeszow.gitaliano.entity"/>
-    <context:component-scan base-package="rzeszow.gitaliano.enums"/>
-    <context:component-scan base-package="rzeszow.gitaliano.service.impl"/>
-    <context:component-scan base-package="rzeszow.gitaliano.service"/>
+    <!--<context:component-scan base-package="rzeszow.gitaliano.dao"/>-->
+    <!--<context:component-scan base-package="rzeszow.gitaliano.entity"/>-->
+    <!--<context:component-scan base-package="rzeszow.gitaliano.enums"/>-->
+    <!--<context:component-scan base-package="rzeszow.gitaliano.service.impl"/>-->
+    <!--<context:component-scan base-package="rzeszow.gitaliano.service"/>-->
+
+    <context:component-scan base-package="rzeszow.gitaliano.*"/>
 
 
 
     <!--оголошення менеджера транзакцій-->
 
-    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <!--шлях до репозиторіїв jpa-->
 
@@ -27,7 +36,7 @@
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"></bean>
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
         <property name="persistenceXmlLocation"  value="classpath:/META-INF/persistence.xml"/>
         <property name="persistenceUnitName" value="gitaliano"/>

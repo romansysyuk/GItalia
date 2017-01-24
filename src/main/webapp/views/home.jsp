@@ -10,7 +10,6 @@
 <head>
     <title>Title</title>
 </head>
-<body >
-<div width = 100, height = 100, background></div>
+<body>
 </body>
 </html>

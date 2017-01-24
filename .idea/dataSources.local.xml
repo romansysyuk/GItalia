@@ -2,9 +2,10 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="gitaliano/Hibernate" uuid="c0663b82-bd48-4d1a-9cc7-a469fb800a03">
-      <first-sync>true</first-sync>
+      <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <user-password>dfc0dfcedfc8dfc9df90dfc7dfd3dfd9dfdbdfc6df90df85df85dfc6dfc5dfc9dfcbdfc6dfc2dfc5dfd9dfdedf90df99df99df9adf9cdf85dfcddfc3dfdedfcbdfc6dfc3dfcbdfc4dfc5</user-password>
+      <schema-pattern>gitaliano.*</schema-pattern>
+      <default-schemas>gitaliano.*</default-schemas>
     </data-source>
   </component>
 </project>
