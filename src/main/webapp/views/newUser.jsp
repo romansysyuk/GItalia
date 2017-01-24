@@ -13,12 +13,22 @@
 <head>
     <title>Create new User</title>
 </head>
-<body>
+
+
 <form:form method="post" action="/createNewUser" modelAttribute="user">
-    <form:label path="firstName">First Name</form:label>
-    <form:input path="firstName"/>
-    <form:label path="lastName">Last Name</form:label>
-    <form:input path="lastName"/>
+    <tr>
+        <td>
+        <form:label path="firstName">First Name</form:label>
+        <form:input path="firstName"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <form:label path="lastName">Last Name</form:label>
+        <form:input path="lastName"/>
+        </td>
+    </tr>>
+    <form:button>Submit!</form:button>
 </form:form>
 
 

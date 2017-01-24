@@ -15,11 +15,6 @@
 
     <!--підтягнення всіх неоголошених компонентів
     -Підключення компонентів з аннотаціями @Component @Controller-->
-    <!--<context:component-scan base-package="rzeszow.gitaliano.dao"/>-->
-    <!--<context:component-scan base-package="rzeszow.gitaliano.entity"/>-->
-    <!--<context:component-scan base-package="rzeszow.gitaliano.enums"/>-->
-    <!--<context:component-scan base-package="rzeszow.gitaliano.service.impl"/>-->
-    <!--<context:component-scan base-package="rzeszow.gitaliano.service"/>-->
 
     <context:component-scan base-package="rzeszow.gitaliano.*"/>
 
@@ -45,6 +40,8 @@
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
+
+
 
 
 

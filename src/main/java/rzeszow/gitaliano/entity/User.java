@@ -1,9 +1,11 @@
 package rzeszow.gitaliano.entity;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import rzeszow.gitaliano.enums.SexEnum;
 
+
+import rzeszow.gitaliano.enums.SexEnum;
 import javax.persistence.*;
+import javax.validation.constraints.*;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.List;
 
@@ -17,16 +19,21 @@ public class User {
     @Column
     private long id;
 
-    @Column(length = 32)
+    @Column(length = 20)
+    @Size(max = 20,min = 3, message = "Имя повинно бути від 3 до 20 символів")
     private String firstName;
-    @Column(length = 32)
+
+    @Column(length = 20)
+    @Size(max = 20,min = 3, message = "Имя повинно бути від 3 до 20 символів")
     private String lastName;
+
     @Column
     @Enumerated(EnumType.STRING)
     private SexEnum sexEnum;
     @Column
     private Date birthDate;
     @Column(length = 20)
+    @Pattern(regexp = "[a-zA-z0-9.+_+-]+@[A-Za-z]+.[a-zA-z]{2,4}", message = "Your email is invalid")
     private String email;
     @Column(length = 16)
     private String phoneNumber;

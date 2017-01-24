@@ -14,10 +14,12 @@ import rzeszow.gitaliano.entity.User;
 import rzeszow.gitaliano.service.UserService;
 import rzeszow.gitaliano.service.impl.UserServiceImplementation;
 
+import javax.validation.Valid;
+
 /**
  * Created by kobeb on 20.01.2017.
  */
-@Component
+@Controller
 public class UserController {
 
     @Autowired
@@ -25,12 +27,16 @@ public class UserController {
 
     @RequestMapping(value = "/newUser", method = RequestMethod.GET)
     public String newUser(Model model){
-        model.addAttribute("user",new User());
+        model.addAttribute("user", new User());
         return "newUser";
     }
 
+
     @RequestMapping(value = "/createNewUser", method = RequestMethod.POST)
-    public String createNewUser(@ModelAttribute User user){
+    public String createNewUser(@ModelAttribute @Valid User user, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "redirect:/newUser";
+        }
         userService.addUser(user);
         return "redirect:/home";
     }
