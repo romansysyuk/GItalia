@@ -33,7 +33,7 @@ public class UserController {
 
 
     @RequestMapping(value = "/createNewUser", method = RequestMethod.POST)
-    public String createNewUser(@ModelAttribute @Valid User user, BindingResult bindingResult){
+    public String createNewUser(@Valid User user, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "redirect:/newUser";
         }

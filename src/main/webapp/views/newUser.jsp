@@ -16,18 +16,22 @@
 
 
 <form:form method="post" action="/createNewUser" modelAttribute="user">
+  <table>
     <tr>
         <td>
         <form:label path="firstName">First Name</form:label>
         <form:input path="firstName"/>
+        <form:errors path="firstName" cssClass="error"/>
         </td>
     </tr>
     <tr>
         <td>
         <form:label path="lastName">Last Name</form:label>
         <form:input path="lastName"/>
+            <form:errors path="firstName" cssClass="error"/>
         </td>
-    </tr>>
+    </tr>
+      </table>
     <form:button>Submit!</form:button>
 </form:form>
 

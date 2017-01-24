@@ -11,7 +11,7 @@
 
 
     <!--Підтягує всі анотації Spring MVC-->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven></mvc:annotation-driven>
     <!--Підключення компонентів з аннотаціями @Component @Controller-->
     <!--<context:component-scan base-package="rzeszow.gitaliano.controller"/>-->
     <import resource="classpath:/META-INF/app-context.xml"/>

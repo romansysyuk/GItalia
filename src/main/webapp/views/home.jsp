@@ -11,5 +11,6 @@
     <title>Title</title>
 </head>
 <body>
+<a href="/newUser"><button type="submit">Submit</button></a>
 </body>
 </html>
